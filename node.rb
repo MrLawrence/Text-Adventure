@@ -1,6 +1,13 @@
 require 'ostruct'
 
 class Node < OpenStruct
+  DEFAULTS = {
+      :root => {:open => true},
+      :room => {:open => true},
+      :item => {:open => false},
+      :player => {:open => true}
+  }
+
   def initialize(parent, tag)
     super()
 
