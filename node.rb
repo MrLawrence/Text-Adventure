@@ -11,10 +11,10 @@ class Node < OpenStruct
   def initialize(parent, tag)
     super()
 
-    self.parent = parent
-    self.parent.children << self unless parent.nil?
-    self.tag = tag
-    self.children = []
+    @parent = parent
+    @tag = tag
+    @children = []
+    @parent.children << self unless parent.nil?
 
     yield(self) if block_given?
   end
